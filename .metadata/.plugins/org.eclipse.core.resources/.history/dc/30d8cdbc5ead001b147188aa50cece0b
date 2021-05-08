@@ -1,0 +1,76 @@
+package base;
+
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.GeckoDriverInfo;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.relevantcodes.extentreports.ExtentTest;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import utilities.AppConstants;
+
+public class BaseTest {
+
+	
+		//in baseTest we will save all our variables
+		//to access these  variable accross other packages 
+		//we use public static
+		
+	    static String sReportTime;
+		
+		public static WebDriver driver =null;
+		
+		public static ExtentReports extent = null;
+		
+		public static ExtentHtmlReporter htmlreporter;
+		
+		public static ExtentTest test = null;
+		
+		public static Properties sProperties;
+		
+		private String sBrowserName;
+		
+		public void Initializereport() {
+	sReportTime = new SimpleDateFormat("yyyymmddhhmm").format(new Date(0));
+			extent = new ExtentReports();
+			htmlreporter = new ExtentHtmlReporter(AppConstants.EXTENT_HTML_REPORT_PATH+"//"+sReportTime+".html");
+		extent.attachReporter(htmlreporter);
+          
+		
+		
+		}
+		
+		public WebDriver getDriver(String BrowserName) {
+			
+			sBrowserName = BrowserName.toLowerCase();
+			
+			switch(sBrowserName) {
+			case "chrome":
+				WebDriverManager.chromedriver().setup();
+				driver = new ChromeDriver();
+				break;
+			
+			case "firefox":
+				WebDriverManager.firefoxdriver().setup();
+				driver = new FirefoxDriver();
+				break;
+			
+				default:
+					driver= null;
+					
+			
+			}
+			return driver;
+			
+		}
+
+	}
+
+
