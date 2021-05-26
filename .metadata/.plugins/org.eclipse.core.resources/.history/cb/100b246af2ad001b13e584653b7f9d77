@@ -1,6 +1,0 @@
-App.URL = https://login.salesforce.com
-we.username.id = By.id("username")
-we.password.id =By.id("password")
-we.login.xpath =By.xpath("//*[@id=\"Login\"]")
-we.errormsg.xpath = //*[@id='erroe']
-login.errormsg = Please enter your password.

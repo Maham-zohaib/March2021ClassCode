@@ -46,16 +46,14 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="tech.com"/>
-			<item value="com.selenium"/>
-			<item value="com.demo"/>
+			<item value="com.mobile"/>
+			<item value="Restassure.com"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="SeleniumTechTrainning"/>
-			<item value="AutomationMaster"/>
-			<item value="ExcelReadig"/>
+			<item value="MobileAutomationMarch21"/>
+			<item value="restassure"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="APITesting" >
+
+	<test name="API_Testing">
+		
+		<classes>
+		<class name="restassure.Login">
+			<methods>
+					<include name="Login_01"></include>
+					<include name="Login_02"></include>
+					<include name="Login_03"></include>
+			</methods>
+			</class>
+		
+			<class name="restassure.AddData">
+			<methods>
+					<exclude name="AddData_01"></exclude>
+					
+			</methods>
+			</class>
+			
+			<class name="restassure.GetData">
+			<methods>
+					<exclude name="GetData_01"></exclude>
+					
+			</methods>
+			</class>
+			
+			<class name="restassure.UpdateData">
+			<methods>
+					<exclude name="UpdateData_01"></exclude>
+					
+			</methods>
+			</class>
+			
+			</classes>
+</test>
+</suite>
